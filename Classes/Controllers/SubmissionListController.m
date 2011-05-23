@@ -11,6 +11,7 @@
 #import "SubmissionListController.h"
 #import "SubmissionTableCell.h"
 #import "CommentListController.h"
+#import "BrowserController.h"
 
 @implementation SubmissionListController
 
@@ -61,9 +62,13 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     HNEntry *entry = [[(HNEntry *) source entries] objectAtIndex:[indexPath row]];
     
-    CommentListController *controller = [[CommentListController alloc] initWithSource:entry];
-    [controller setTitle:@"Submission"];
+    BrowserController *controller = [[BrowserController alloc] initWithURL:entry.destination];
     [[self navigationController] pushViewController:[controller autorelease] animated:YES];
+
+    
+    //CommentListController *controller = [[CommentListController alloc] initWithSource:entry];
+    //[controller setTitle:@"Submission"];
+    //[[self navigationController] pushViewController:[controller autorelease] animated:YES];
 }
 
 - (void)finishedLoading {
