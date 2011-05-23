@@ -64,14 +64,15 @@
     CGSize bounds = [self bounds].size;
     CGSize offsets = CGSizeMake(8.0f, 4.0f);
     
-    NSString *user = [[submission submitter] identifier];
+    NSString *user = [[submission destination] host]; 
     NSString *date = [submission posted];
-    NSString *site = [[submission destination] host];
+    NSString *site = [[submission submitter] identifier]; 
     if ([submission body] != nil) site = @""; // don't show URLs for self posts
     NSString *point = [submission points] == 1 ? @"1 point" : [NSString stringWithFormat:@"%d points", [submission points]];
     NSString *comment = [submission children] == 0 ? @"no comments" : [submission children] == 1 ? @"1 comment" : [NSString stringWithFormat:@"%d comments", [submission children]];
     NSString *points = [NSString stringWithFormat:@"%@ • %@", point, comment];
-    NSString *title = [[submission title] stringByDecodingHTMLEntities];
+    NSString *title = [[submission title] stringByDecodingHTMLEntities]; 
+
     
     if ([self isHighlighted] || [self isSelected]) [[UIColor whiteColor] set];
     
