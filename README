@@ -4,4 +4,8 @@ Right now, I don't have much information here, but I hope to add more in the fut
 
 For building, just opening the Xcode project and hitting build should be good enough, but you might need to mess with target SDKs and such. I built this in Xcode 4, so you might need that, too: I'm not sure what the state of Xcode 4 is with regards to backwards compatability.
 
+## Changes from the original 
 
+* Switched user and url text in submission list. I want to know where the article comes from rather than the user who found it
+* When tapping a submission the detail view is shown instead of the comments view. Need to tweak this.
+* Added mechanism to see which submissions have been read.
