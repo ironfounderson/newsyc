@@ -61,30 +61,38 @@
                        inManagedObjectContext:self.coreDataStack.managedObjectContext];;
 }
 
+- (BOOL)isEntryRead:(HNEntry *)entry {
+    HNSubmissionModel *submission = [self submissionFromEntry:entry];
+    return submission ? submission.readValue : NO;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)table cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     SubmissionTableCell *cell = (SubmissionTableCell *) [tableView dequeueReusableCellWithIdentifier:@"submission"];
     if (cell == nil) cell = [[[SubmissionTableCell alloc] initWithReuseIdentifier:@"submission"] autorelease];
     
     HNEntry *entry = [[(HNEntry *) source entries] objectAtIndex:[indexPath row]];
     [cell setSubmission:entry];
-    HNSubmissionModel *submission = [self submissionFromEntry:entry];
-    cell.read = submission.readValue;
+    cell.read = [self isEntryRead:entry];
     return cell;
 }
 
 - (void)markEntryAsRead:(HNEntry *)entry {
     HNSubmissionModel *submission = [self submissionFromEntry:entry];
+    if (!submission) {
+        submission = [HNSubmissionModel insertInManagedObjectContext:self.coreDataStack.managedObjectContext];
+        submission.hn_id = entry.identifier;
+    }
     submission.readValue = YES;
     [self.coreDataStack save];
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     HNEntry *entry = [[(HNEntry *) source entries] objectAtIndex:[indexPath row]];
     [self markEntryAsRead:entry];
 
     BrowserController *controller = [[BrowserController alloc] initWithURL:entry.destination];
     [[self navigationController] pushViewController:[controller autorelease] animated:YES];
-    [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] 
+    [aTableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] 
                      withRowAnimation:UITableViewRowAnimationNone];
 
     
@@ -94,6 +102,13 @@
 }
 
 - (void)finishedLoading {
+    HNEntry *sourceEntry = (HNEntry *)source;
+    NSMutableArray *unreadEntries = [NSMutableArray arrayWithCapacity:sourceEntry.entries.count];
+    for (HNEntry *entry in sourceEntry.entries) {
+        if (![self isEntryRead:entry])
+            [unreadEntries addObject:entry];
+    }
+    sourceEntry.entries = unreadEntries;
     [super finishedLoading];
     
     if (refreshView == nil) {

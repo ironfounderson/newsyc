@@ -14,30 +14,15 @@
     NSPredicate *predicate = [NSPredicate predicateWithFormat: @"hn_id == %@", identifier];
     [request setPredicate:predicate];
     
-    /*
-    // Edit the sort key as appropriate.
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"yourSortKey" ascending:YES];
-    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
-    [request setSortDescriptors:sortDescriptors];
-    */
-    
-    
     NSError *error = nil;
     NSArray *result = [moc executeFetchRequest:request error:&error];
     
     [request release];
-    //[sortDescriptor release];
-    //[sortDescriptors release];
     
-    if (!result) 
+    if (!result || result.count == 0) 
         return nil;
     
-    if (result && result.count > 0) 
-        return [result objectAtIndex:0];
-    
-    HNSubmissionModel *submission = [self insertInManagedObjectContext:moc];
-    submission.hn_id = identifier;
-    return submission;
+    return [result objectAtIndex:0];    
 }
 
 @end
