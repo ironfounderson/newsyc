@@ -8,7 +8,7 @@
 
 #import "LoginController.h"
 
-@class SubmissionListController, SessionProfileController, MoreController;
+@class SubmissionListController, SessionProfileController, MoreController, RHCoreDataStack;
 @interface MainTabBarController : UITabBarController <UIActionSheetDelegate, LoginControllerDelegate> {
     SubmissionListController *home;
     SubmissionListController *latest;

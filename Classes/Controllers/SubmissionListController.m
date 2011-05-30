@@ -12,11 +12,17 @@
 #import "SubmissionTableCell.h"
 #import "CommentListController.h"
 #import "BrowserController.h"
+#import "HNSubmissionModel.h"
+#import "RHCoreDataStack.h"
 
 @implementation SubmissionListController
 
+@synthesize coreDataStack;
+
+
 - (void)dealloc {
     [refreshView release];
+    [coreDataStack release];
     [super dealloc];
 }
 
@@ -50,20 +56,36 @@
     return [SubmissionTableCell heightForEntry:entry withWidth:[[self view] bounds].size.width];
 }
 
+- (HNSubmissionModel *)submissionFromEntry:(HNEntry *)entry {
+    return [HNSubmissionModel submissionForId:entry.identifier 
+                       inManagedObjectContext:self.coreDataStack.managedObjectContext];;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)table cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     SubmissionTableCell *cell = (SubmissionTableCell *) [tableView dequeueReusableCellWithIdentifier:@"submission"];
     if (cell == nil) cell = [[[SubmissionTableCell alloc] initWithReuseIdentifier:@"submission"] autorelease];
     
     HNEntry *entry = [[(HNEntry *) source entries] objectAtIndex:[indexPath row]];
     [cell setSubmission:entry];
+    HNSubmissionModel *submission = [self submissionFromEntry:entry];
+    cell.read = submission.readValue;
     return cell;
+}
+
+- (void)markEntryAsRead:(HNEntry *)entry {
+    HNSubmissionModel *submission = [self submissionFromEntry:entry];
+    submission.readValue = YES;
+    [self.coreDataStack save];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     HNEntry *entry = [[(HNEntry *) source entries] objectAtIndex:[indexPath row]];
-    
+    [self markEntryAsRead:entry];
+
     BrowserController *controller = [[BrowserController alloc] initWithURL:entry.destination];
     [[self navigationController] pushViewController:[controller autorelease] animated:YES];
+    [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] 
+                     withRowAnimation:UITableViewRowAnimationNone];
 
     
     //CommentListController *controller = [[CommentListController alloc] initWithSource:entry];

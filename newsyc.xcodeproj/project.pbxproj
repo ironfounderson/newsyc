@@ -125,6 +125,11 @@
 		7DFFDF0B13325FF20082F55A /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DFFDF0A13325FF20082F55A /* CoreText.framework */; };
 		943C1880134E16D700A5977E /* Default-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 943C187E134E16D700A5977E /* Default-Landscape.png */; };
 		943C1881134E16D700A5977E /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 943C187F134E16D700A5977E /* Default-Portrait.png */; };
+		E1703E1013937C4400BD91D9 /* newsyc.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E1703E0E13937C4400BD91D9 /* newsyc.xcdatamodeld */; };
+		E1703E1713937DEF00BD91D9 /* _HNSubmissionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E1703E1413937DEF00BD91D9 /* _HNSubmissionModel.m */; };
+		E1703E1813937DEF00BD91D9 /* HNSubmissionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E1703E1613937DEF00BD91D9 /* HNSubmissionModel.m */; };
+		E1703E1B13937E1600BD91D9 /* RHCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = E1703E1A13937E1600BD91D9 /* RHCoreDataStack.m */; };
+		E1703E1D13937E3400BD91D9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1703E1C13937E3400BD91D9 /* CoreData.framework */; };
 		FA5F796B134CE04F002EEBCA /* InstapaperLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5F796A134CE04F002EEBCA /* InstapaperLoginController.m */; };
 		FA85248E1357BA73004E5A72 /* NSArray+Strings.m in Sources */ = {isa = PBXBuildFile; fileRef = FA85248D1357BA73004E5A72 /* NSArray+Strings.m */; };
 		FAF07BF2134F6B13000743BE /* readability.png in Resources */ = {isa = PBXBuildFile; fileRef = FAF07BF0134F6B13000743BE /* readability.png */; };
@@ -324,6 +329,14 @@
 		7DFFDF0A13325FF20082F55A /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		943C187E134E16D700A5977E /* Default-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape.png"; sourceTree = "<group>"; };
 		943C187F134E16D700A5977E /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait.png"; sourceTree = "<group>"; };
+		E1703E0F13937C4400BD91D9 /* newsyc.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = newsyc.xcdatamodel; sourceTree = "<group>"; };
+		E1703E1313937DEF00BD91D9 /* _HNSubmissionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _HNSubmissionModel.h; sourceTree = "<group>"; };
+		E1703E1413937DEF00BD91D9 /* _HNSubmissionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _HNSubmissionModel.m; sourceTree = "<group>"; };
+		E1703E1513937DEF00BD91D9 /* HNSubmissionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNSubmissionModel.h; sourceTree = "<group>"; };
+		E1703E1613937DEF00BD91D9 /* HNSubmissionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNSubmissionModel.m; sourceTree = "<group>"; };
+		E1703E1913937E1600BD91D9 /* RHCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHCoreDataStack.h; sourceTree = "<group>"; };
+		E1703E1A13937E1600BD91D9 /* RHCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHCoreDataStack.m; sourceTree = "<group>"; };
+		E1703E1C13937E3400BD91D9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		FA5F7969134CE04F002EEBCA /* InstapaperLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstapaperLoginController.h; sourceTree = "<group>"; };
 		FA5F796A134CE04F002EEBCA /* InstapaperLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstapaperLoginController.m; sourceTree = "<group>"; };
 		FA85248C1357BA73004E5A72 /* NSArray+Strings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Strings.h"; sourceTree = "<group>"; };
@@ -337,6 +350,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1703E1D13937E3400BD91D9 /* CoreData.framework in Frameworks */,
 				7D148E65132D68B5008FBF32 /* libxml2.dylib in Frameworks */,
 				7D1F98921320CF720059EBBB /* UIKit.framework in Frameworks */,
 				7D1F98941320CF720059EBBB /* Foundation.framework in Frameworks */,
@@ -372,6 +386,7 @@
 		7D1F98901320CF720059EBBB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E1703E1C13937E3400BD91D9 /* CoreData.framework */,
 				7D148E64132D68B5008FBF32 /* libxml2.dylib */,
 				7D8A660713333A72002012AA /* QuartzCore.framework */,
 				7DFFDF0A13325FF20082F55A /* CoreText.framework */,
@@ -396,6 +411,7 @@
 				7D6B9E391347DF2E00CD923C /* Icon.png */,
 				7D6B9E3A1347DF2E00CD923C /* Icon@2x.png */,
 				7D6B9E591347DF2E00CD923C /* iTunesArtwork */,
+				E1703E0E13937C4400BD91D9 /* newsyc.xcdatamodeld */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -452,6 +468,7 @@
 				7D6B9ED41347DF2E00CD923C /* Views */,
 				7D6B9E6D1347DF2E00CD923C /* Cells */,
 				7D6B9E741347DF2E00CD923C /* Controllers */,
+				E1703E1213937CBC00BD91D9 /* CoreData */,
 				7D6B9ED11347DF2E00CD923C /* AppDelegate.h */,
 				7D6B9ED21347DF2E00CD923C /* AppDelegate.m */,
 				7D6B9ED01347DF2E00CD923C /* Prefix.pch */,
@@ -658,6 +675,19 @@
 			name = Instapaper;
 			sourceTree = "<group>";
 		};
+		E1703E1213937CBC00BD91D9 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				E1703E1913937E1600BD91D9 /* RHCoreDataStack.h */,
+				E1703E1A13937E1600BD91D9 /* RHCoreDataStack.m */,
+				E1703E1313937DEF00BD91D9 /* _HNSubmissionModel.h */,
+				E1703E1413937DEF00BD91D9 /* _HNSubmissionModel.m */,
+				E1703E1513937DEF00BD91D9 /* HNSubmissionModel.h */,
+				E1703E1613937DEF00BD91D9 /* HNSubmissionModel.m */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -831,6 +861,10 @@
 				7D39780C135682D400A34476 /* HNAnonymousSession.m in Sources */,
 				7D91AA9F135A27DD00247D34 /* ActivityIndicatorItem.m in Sources */,
 				FA85248E1357BA73004E5A72 /* NSArray+Strings.m in Sources */,
+				E1703E1013937C4400BD91D9 /* newsyc.xcdatamodeld in Sources */,
+				E1703E1713937DEF00BD91D9 /* _HNSubmissionModel.m in Sources */,
+				E1703E1813937DEF00BD91D9 /* HNSubmissionModel.m in Sources */,
+				E1703E1B13937E1600BD91D9 /* RHCoreDataStack.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -927,6 +961,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E1703E0E13937C4400BD91D9 /* newsyc.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E1703E0F13937C4400BD91D9 /* newsyc.xcdatamodel */,
+			);
+			currentVersion = E1703E0F13937C4400BD91D9 /* newsyc.xcdatamodel */;
+			path = newsyc.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7D1F98841320CF720059EBBB /* Project object */;
 }

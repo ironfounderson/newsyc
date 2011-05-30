@@ -20,18 +20,23 @@
 #import "SubmissionURLComposeController.h"
 #import "HackerNewsLoginController.h"
 #import "LoginController.h"
+#import "RHCoreDataStack.h"
 
 @implementation MainTabBarController
 
 - (id)init {
     if ((self = [super init])) {
+        RHCoreDataStack *coreDataStack = [RHCoreDataStack coreDataStackWithDataModel:@"newsyc"];
+        
         HNEntry *homeEntry = [[[HNEntry alloc] initWithType:kHNPageTypeSubmissions] autorelease];
         home = [[[SubmissionListController alloc] initWithSource:homeEntry] autorelease];
+        home.coreDataStack = coreDataStack;
         [home setTitle:@"Hacker News"];
         [home setTabBarItem:[[[UITabBarItem alloc] initWithTitle:@"Home" image:[UIImage imageNamed:@"home.png"] tag:0] autorelease]];
         
         HNEntry *newEntry = [[[HNEntry alloc] initWithType:kHNPageTypeNewSubmissions] autorelease];
         latest = [[[SubmissionListController alloc] initWithSource:newEntry] autorelease];
+        latest.coreDataStack = coreDataStack;
         [latest setTitle:@"New Submissions"];
         [latest setTabBarItem:[[[UITabBarItem alloc] initWithTitle:@"New" image:[UIImage imageNamed:@"new.png"] tag:0] autorelease]];
         

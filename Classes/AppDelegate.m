@@ -12,6 +12,7 @@
 
 #import "HNKit.h"
 #import "InstapaperSession.h"
+#import "RHCoreDataStack.h"
 
 @implementation AppDelegate
 
@@ -64,6 +65,13 @@
     [navigationController release];
 
     [super dealloc];
+}
+
+- (RHCoreDataStack *)coreDataStack {
+    if (!coreDataStack) {
+        coreDataStack = [[RHCoreDataStack coreDataStackWithDataModel:@"newsyc"] retain];
+    }
+    return coreDataStack;
 }
 
 @end

@@ -8,10 +8,12 @@
 
 #import "LoginController.h"
 
-@class NavigationController;
+@class NavigationController, RHCoreDataStack;
+
 @interface AppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
     UIWindow *window;
     NavigationController *navigationController;
+    RHCoreDataStack *coreDataStack;
 }
 
 @end

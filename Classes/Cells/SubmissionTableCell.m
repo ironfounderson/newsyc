@@ -13,6 +13,8 @@
 
 @implementation SubmissionTableCell
 @synthesize submission;
+@synthesize read;
+
 
 - (id)initWithReuseIdentifier:(NSString *)identifier {
     if ((self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier])) {
@@ -84,6 +86,8 @@
     [date drawAtPoint:CGPointMake(bounds.width - datewidth - offsets.width, offsets.height) withFont:[[self class] dateFont]];
     
     if (!([self isHighlighted] || [self isSelected])) [[UIColor blackColor] set];
+    if (self.read)
+        [[UIColor lightGrayColor] set];
     [title drawInRect:CGRectMake(offsets.width, offsets.height + 19.0f, bounds.width - (2 * offsets.width), bounds.height - 45.0f) withFont:[[self class] titleFont] lineBreakMode:UILineBreakModeWordWrap];
     
     if (!([self isHighlighted] || [self isSelected])) [[UIColor grayColor] set];

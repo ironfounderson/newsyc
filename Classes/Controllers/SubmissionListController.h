@@ -10,8 +10,12 @@
 
 #import "EGORefreshTableHeaderView.h"
 
+@class RHCoreDataStack;
+
 @interface SubmissionListController : EntryListController<EGORefreshTableHeaderDelegate> {
     EGORefreshTableHeaderView *refreshView;
 }
+
+@property (nonatomic, retain) RHCoreDataStack *coreDataStack;
 
 @end

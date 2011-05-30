@@ -14,6 +14,8 @@
 }
 
 @property (nonatomic, retain) HNEntry *submission;
+@property (nonatomic, assign) BOOL read;
+
 
 + (CGFloat)heightForEntry:(HNEntry *)entry withWidth:(CGFloat)width;
 - (id)initWithReuseIdentifier:(NSString *)identifier;
