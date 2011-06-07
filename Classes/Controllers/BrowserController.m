@@ -36,6 +36,7 @@
     [refreshItem release];
     [loadingItem release];
     [spacerItem release];
+    [wordCountItem release];
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     
@@ -58,7 +59,7 @@
     if ([webview isLoading]) changableItem = loadingItem;
     else changableItem = refreshItem;
     
-    [toolbar setItems:[NSArray arrayWithObjects:spacerItem, backItem, spacerItem, spacerItem, forwardItem, spacerItem, spacerItem, spacerItem, readabilityItem, spacerItem, spacerItem, changableItem, spacerItem, spacerItem, shareItem, spacerItem, nil]];
+    [toolbar setItems:[NSArray arrayWithObjects:spacerItem, backItem, spacerItem, spacerItem, forwardItem, spacerItem, spacerItem, spacerItem, wordCountItem, spacerItem, readabilityItem, spacerItem, spacerItem, changableItem, spacerItem, spacerItem, shareItem, spacerItem, nil]];
 }
 
 - (void)loadView {
@@ -73,6 +74,8 @@
     [toolbar setFrame:toolbarFrame];
     [toolbar setTintColor:[[[self navigationController] navigationBar] tintColor]];
     [[self view] addSubview:toolbar];
+    
+    wordCountItem = [[UIBarButtonItem alloc] initWithTitle:@"--" style:UIBarButtonItemStylePlain target:nil action:nil];
     
     backItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back.png"] style:UIBarButtonItemStylePlain target:self action:@selector(goBack)];
     forwardItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"forward.png"] style:UIBarButtonItemStylePlain target:self action:@selector(goForward)];
@@ -228,10 +231,70 @@
     [self updateToolbarItems];
 }
 
+- (BOOL)urlIsReadability:(NSURL *)url {
+    NSRange range = [url.absoluteString rangeOfString:@"www.readability.com/mobile/articles"];
+    return range.location != NSNotFound;
+    
+}
+
+- (NSString *)flattenHTML:(NSString *)html {
+    
+    NSScanner *thescanner;
+    NSString *text = nil;
+    
+    thescanner = [NSScanner scannerWithString:html];
+    
+    while ([thescanner isAtEnd] == NO) {
+        
+        // find start of tag
+        [thescanner scanUpToString:@"<" intoString:nil] ; 
+        
+        // find end of tag
+        [thescanner scanUpToString:@">" intoString:&text] ;
+        
+        // replace the found tag with a space
+        //(you can filter multi-spaces out later if you wish)
+        html = [html stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"%@>", text] withString:@" "];
+        
+    } // while //
+    
+    return html;
+    
+}
+
+- (NSUInteger)wordCountInHTML:(NSString *)html {
+    NSString *flattenContent = [self flattenHTML:html];
+    NSArray *words = [flattenContent componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    __block NSUInteger wordCount = 0;
+    [words enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        NSString *word = obj;
+        if (word.length > 0)
+            wordCount++;
+    }];
+    return wordCount;
+}
+
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     [self updateToolbarItems];
     [self setCurrentURL:[[webView request] URL]];
     [[self navigationItem] setTitle:[webview stringByEvaluatingJavaScriptFromString:@"document.title"]];
+    if ([self urlIsReadability:webView.request.URL]) {
+        NSString *articleContent = [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByClassName('article-content')[0].innerHTML"];
+        NSUInteger wordCount = [self wordCountInHTML:articleContent];
+        
+        NSUInteger wordsPerMinute = 350;
+        NSUInteger mins = wordCount / wordsPerMinute;
+        if (mins <= 2) 
+            wordCountItem.title = @"2";
+        else if (mins < 5)
+            wordCountItem.title = @"5";
+        else if (mins < 10)
+            wordCountItem.title = @"10";
+        else if (mins < 15)
+            wordCountItem.title = @"15";
+        else
+            wordCountItem.title = @">15";            
+    }
 }
 
 - (void)webViewDidStartLoad:(UIWebView *)webView {
@@ -239,8 +302,8 @@
 }
 
 //These 3 methods from Apple tech doc: http://developer.apple.com/library/ios/#qa/qa1629/_index.html
-- (void)openExternalURL:(NSURL *)externalURL {
-    externalURL = externalURL;
+- (void)openExternalURL:(NSURL *)anExternalURL {
+    externalURL = anExternalURL;
     NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:[NSURLRequest requestWithURL:externalURL] delegate:self startImmediately:YES];
     [conn release];
 }

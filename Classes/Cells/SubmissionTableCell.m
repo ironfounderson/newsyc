@@ -2,19 +2,18 @@
 //  SubmissionTableCell.m
 //  newsyc
 //
-//  Created by Grant Paul on 3/5/11.
-//  Copyright 2011 Xuzz Productions, LLC. All rights reserved.
+//  Created by Robert Hoglund on 5/30/11.
+//  Copyright 2011 rhoglund coding. All rights reserved.
 //
 
+#import "SubmissionTableCell.h"
 #import "HNKit.h"
 #import "NSString+Entities.h"
 
-#import "SubmissionTableCell.h"
-
 @implementation SubmissionTableCell
+
 @synthesize submission;
 @synthesize read;
-
 
 - (id)initWithReuseIdentifier:(NSString *)identifier {
     if ((self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier])) {
@@ -74,7 +73,7 @@
     NSString *comment = [submission children] == 0 ? @"no comments" : [submission children] == 1 ? @"1 comment" : [NSString stringWithFormat:@"%d comments", [submission children]];
     NSString *points = [NSString stringWithFormat:@"%@ • %@", point, comment];
     NSString *title = [[submission title] stringByDecodingHTMLEntities]; 
-
+    
     
     if ([self isHighlighted] || [self isSelected]) [[UIColor whiteColor] set];
     
@@ -114,3 +113,4 @@
 }
 
 @end
+

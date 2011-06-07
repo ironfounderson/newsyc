@@ -62,7 +62,6 @@
 		7D6B9F1B1347DF2E00CD923C /* UIActionSheet+Context.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6B9E6C1347DF2E00CD923C /* UIActionSheet+Context.m */; };
 		7D6B9F1C1347DF2E00CD923C /* ABTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6B9E6F1347DF2E00CD923C /* ABTableViewCell.m */; };
 		7D6B9F1D1347DF2E00CD923C /* CommentTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6B9E711347DF2E00CD923C /* CommentTableCell.m */; };
-		7D6B9F1E1347DF2E00CD923C /* SubmissionTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6B9E731347DF2E00CD923C /* SubmissionTableCell.m */; };
 		7D6B9F1F1347DF2E00CD923C /* BrowserController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6B9E761347DF2E00CD923C /* BrowserController.m */; };
 		7D6B9F201347DF2E00CD923C /* CommentListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6B9E781347DF2E00CD923C /* CommentListController.m */; };
 		7D6B9F211347DF2E00CD923C /* ComposeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6B9E7A1347DF2E00CD923C /* ComposeController.m */; };
@@ -75,7 +74,6 @@
 		7D6B9F281347DF2E00CD923C /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6B9E881347DF2E00CD923C /* NavigationController.m */; };
 		7D6B9F291347DF2E00CD923C /* ProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6B9E8A1347DF2E00CD923C /* ProfileController.m */; };
 		7D6B9F2A1347DF2E00CD923C /* SessionProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6B9E8C1347DF2E00CD923C /* SessionProfileController.m */; };
-		7D6B9F2B1347DF2E00CD923C /* SubmissionListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6B9E8E1347DF2E00CD923C /* SubmissionListController.m */; };
 		7D6B9F2C1347DF2E00CD923C /* SubmissionTextComposeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6B9E901347DF2E00CD923C /* SubmissionTextComposeController.m */; };
 		7D6B9F2D1347DF2E00CD923C /* SubmissionURLComposeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6B9E921347DF2E00CD923C /* SubmissionURLComposeController.m */; };
 		7D6B9F2E1347DF2E00CD923C /* CGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6B9E951347DF2E00CD923C /* CGUtils.m */; };
@@ -130,6 +128,8 @@
 		E1703E1813937DEF00BD91D9 /* HNSubmissionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E1703E1613937DEF00BD91D9 /* HNSubmissionModel.m */; };
 		E1703E1B13937E1600BD91D9 /* RHCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = E1703E1A13937E1600BD91D9 /* RHCoreDataStack.m */; };
 		E1703E1D13937E3400BD91D9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1703E1C13937E3400BD91D9 /* CoreData.framework */; };
+		E18DBE601393BC6D00914E7E /* SubmissionTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E18DBE5F1393BC6D00914E7E /* SubmissionTableCell.m */; };
+		E18DBE631393BDC800914E7E /* SubmissionListController.m in Sources */ = {isa = PBXBuildFile; fileRef = E18DBE621393BDC800914E7E /* SubmissionListController.m */; };
 		FA5F796B134CE04F002EEBCA /* InstapaperLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5F796A134CE04F002EEBCA /* InstapaperLoginController.m */; };
 		FA85248E1357BA73004E5A72 /* NSArray+Strings.m in Sources */ = {isa = PBXBuildFile; fileRef = FA85248D1357BA73004E5A72 /* NSArray+Strings.m */; };
 		FAF07BF2134F6B13000743BE /* readability.png in Resources */ = {isa = PBXBuildFile; fileRef = FAF07BF0134F6B13000743BE /* readability.png */; };
@@ -205,8 +205,6 @@
 		7D6B9E6F1347DF2E00CD923C /* ABTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABTableViewCell.m; sourceTree = "<group>"; };
 		7D6B9E701347DF2E00CD923C /* CommentTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentTableCell.h; sourceTree = "<group>"; };
 		7D6B9E711347DF2E00CD923C /* CommentTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentTableCell.m; sourceTree = "<group>"; };
-		7D6B9E721347DF2E00CD923C /* SubmissionTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmissionTableCell.h; sourceTree = "<group>"; };
-		7D6B9E731347DF2E00CD923C /* SubmissionTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubmissionTableCell.m; sourceTree = "<group>"; };
 		7D6B9E751347DF2E00CD923C /* BrowserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowserController.h; sourceTree = "<group>"; };
 		7D6B9E761347DF2E00CD923C /* BrowserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowserController.m; sourceTree = "<group>"; };
 		7D6B9E771347DF2E00CD923C /* CommentListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentListController.h; sourceTree = "<group>"; };
@@ -231,8 +229,6 @@
 		7D6B9E8A1347DF2E00CD923C /* ProfileController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileController.m; sourceTree = "<group>"; };
 		7D6B9E8B1347DF2E00CD923C /* SessionProfileController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionProfileController.h; sourceTree = "<group>"; };
 		7D6B9E8C1347DF2E00CD923C /* SessionProfileController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionProfileController.m; sourceTree = "<group>"; };
-		7D6B9E8D1347DF2E00CD923C /* SubmissionListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmissionListController.h; sourceTree = "<group>"; };
-		7D6B9E8E1347DF2E00CD923C /* SubmissionListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubmissionListController.m; sourceTree = "<group>"; };
 		7D6B9E8F1347DF2E00CD923C /* SubmissionTextComposeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmissionTextComposeController.h; sourceTree = "<group>"; };
 		7D6B9E901347DF2E00CD923C /* SubmissionTextComposeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubmissionTextComposeController.m; sourceTree = "<group>"; };
 		7D6B9E911347DF2E00CD923C /* SubmissionURLComposeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmissionURLComposeController.h; sourceTree = "<group>"; };
@@ -337,6 +333,10 @@
 		E1703E1913937E1600BD91D9 /* RHCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHCoreDataStack.h; sourceTree = "<group>"; };
 		E1703E1A13937E1600BD91D9 /* RHCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHCoreDataStack.m; sourceTree = "<group>"; };
 		E1703E1C13937E3400BD91D9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		E18DBE5E1393BC6D00914E7E /* SubmissionTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmissionTableCell.h; sourceTree = "<group>"; };
+		E18DBE5F1393BC6D00914E7E /* SubmissionTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubmissionTableCell.m; sourceTree = "<group>"; };
+		E18DBE611393BDC800914E7E /* SubmissionListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmissionListController.h; sourceTree = "<group>"; };
+		E18DBE621393BDC800914E7E /* SubmissionListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubmissionListController.m; sourceTree = "<group>"; };
 		FA5F7969134CE04F002EEBCA /* InstapaperLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstapaperLoginController.h; sourceTree = "<group>"; };
 		FA5F796A134CE04F002EEBCA /* InstapaperLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstapaperLoginController.m; sourceTree = "<group>"; };
 		FA85248C1357BA73004E5A72 /* NSArray+Strings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Strings.h"; sourceTree = "<group>"; };
@@ -509,8 +509,8 @@
 				7D6B9E6F1347DF2E00CD923C /* ABTableViewCell.m */,
 				7D6B9E701347DF2E00CD923C /* CommentTableCell.h */,
 				7D6B9E711347DF2E00CD923C /* CommentTableCell.m */,
-				7D6B9E721347DF2E00CD923C /* SubmissionTableCell.h */,
-				7D6B9E731347DF2E00CD923C /* SubmissionTableCell.m */,
+				E18DBE5E1393BC6D00914E7E /* SubmissionTableCell.h */,
+				E18DBE5F1393BC6D00914E7E /* SubmissionTableCell.m */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -526,8 +526,6 @@
 				7D6B9E801347DF2E00CD923C /* LoadingController.m */,
 				7D6B9E7B1347DF2E00CD923C /* EntryListController.h */,
 				7D6B9E7C1347DF2E00CD923C /* EntryListController.m */,
-				7D6B9E8D1347DF2E00CD923C /* SubmissionListController.h */,
-				7D6B9E8E1347DF2E00CD923C /* SubmissionListController.m */,
 				7D6B9E771347DF2E00CD923C /* CommentListController.h */,
 				7D6B9E781347DF2E00CD923C /* CommentListController.m */,
 				7D6B9E851347DF2E00CD923C /* MoreController.h */,
@@ -552,6 +550,8 @@
 				7D6B9E921347DF2E00CD923C /* SubmissionURLComposeController.m */,
 				7D6B9E7D1347DF2E00CD923C /* EntryReplyComposeController.h */,
 				7D6B9E7E1347DF2E00CD923C /* EntryReplyComposeController.m */,
+				E18DBE611393BDC800914E7E /* SubmissionListController.h */,
+				E18DBE621393BDC800914E7E /* SubmissionListController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -800,7 +800,6 @@
 				7D6B9F1B1347DF2E00CD923C /* UIActionSheet+Context.m in Sources */,
 				7D6B9F1C1347DF2E00CD923C /* ABTableViewCell.m in Sources */,
 				7D6B9F1D1347DF2E00CD923C /* CommentTableCell.m in Sources */,
-				7D6B9F1E1347DF2E00CD923C /* SubmissionTableCell.m in Sources */,
 				7D6B9F1F1347DF2E00CD923C /* BrowserController.m in Sources */,
 				7D6B9F201347DF2E00CD923C /* CommentListController.m in Sources */,
 				7D6B9F211347DF2E00CD923C /* ComposeController.m in Sources */,
@@ -813,7 +812,6 @@
 				7D6B9F281347DF2E00CD923C /* NavigationController.m in Sources */,
 				7D6B9F291347DF2E00CD923C /* ProfileController.m in Sources */,
 				7D6B9F2A1347DF2E00CD923C /* SessionProfileController.m in Sources */,
-				7D6B9F2B1347DF2E00CD923C /* SubmissionListController.m in Sources */,
 				7D6B9F2C1347DF2E00CD923C /* SubmissionTextComposeController.m in Sources */,
 				7D6B9F2D1347DF2E00CD923C /* SubmissionURLComposeController.m in Sources */,
 				7D6B9F2E1347DF2E00CD923C /* CGUtils.m in Sources */,
@@ -865,6 +863,8 @@
 				E1703E1713937DEF00BD91D9 /* _HNSubmissionModel.m in Sources */,
 				E1703E1813937DEF00BD91D9 /* HNSubmissionModel.m in Sources */,
 				E1703E1B13937E1600BD91D9 /* RHCoreDataStack.m in Sources */,
+				E18DBE601393BC6D00914E7E /* SubmissionTableCell.m in Sources */,
+				E18DBE631393BDC800914E7E /* SubmissionListController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -915,6 +915,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Classes/Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(LOCAL_APPS_DIR)";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
@@ -930,6 +931,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Classes/Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(LOCAL_APPS_DIR)";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;

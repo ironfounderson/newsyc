@@ -89,12 +89,12 @@
 - (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     HNEntry *entry = [[(HNEntry *) source entries] objectAtIndex:[indexPath row]];
     [self markEntryAsRead:entry];
-
+    
     BrowserController *controller = [[BrowserController alloc] initWithURL:entry.destination];
     [[self navigationController] pushViewController:[controller autorelease] animated:YES];
     [aTableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] 
-                     withRowAnimation:UITableViewRowAnimationNone];
-
+                      withRowAnimation:UITableViewRowAnimationNone];
+    
     
     //CommentListController *controller = [[CommentListController alloc] initWithSource:entry];
     //[controller setTitle:@"Submission"];
@@ -108,7 +108,7 @@
         if (![self isEntryRead:entry])
             [unreadEntries addObject:entry];
     }
-    sourceEntry.entries = unreadEntries;
+    //sourceEntry.entries = unreadEntries;
     [super finishedLoading];
     
     if (refreshView == nil) {
@@ -139,7 +139,7 @@
 }
 
 - (NSDate *)egoRefreshTableHeaderDataSourceLastUpdated:(EGORefreshTableHeaderView *)view {
-     // XXX: what should really go here?
+    // XXX: what should really go here?
 	return [NSDate date];
 }
 

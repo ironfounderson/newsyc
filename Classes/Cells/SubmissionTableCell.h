@@ -2,10 +2,11 @@
 //  SubmissionTableCell.h
 //  newsyc
 //
-//  Created by Grant Paul on 3/5/11.
-//  Copyright 2011 Xuzz Productions, LLC. All rights reserved.
+//  Created by Robert Hoglund on 5/30/11.
+//  Copyright 2011 rhoglund coding. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import "ABTableViewCell.h"
 
 @class HNEntry;

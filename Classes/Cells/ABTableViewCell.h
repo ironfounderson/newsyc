@@ -33,6 +33,7 @@
 
 @interface ABTableViewCell : UITableViewCell
 {
+@protected  
 	UIView *contentView;
 }
 

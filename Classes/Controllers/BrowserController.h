@@ -23,6 +23,7 @@
     UIBarButtonItem *backItem;
     UIBarButtonItem *forwardItem;
     ActivityIndicatorItem *loadingItem;
+    UIBarButtonItem *wordCountItem;
     UIBarButtonItem *refreshItem;
     UIBarButtonItem *shareItem;
     UIBarButtonItem *spacerItem;
